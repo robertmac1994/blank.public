@@ -322,3 +322,21 @@ footer {
   .contact-form button:hover {
     background-color: #21867a;
   }
+
+  #results {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .result-card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .result-card h3 { margin: 0 0 8px; }
+  .result-card p { margin: 0; }
