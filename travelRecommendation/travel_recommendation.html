@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelTime USA Travel Recommendations</title>
+
+  <!-- Our custom stylesheet - not created yet, so the page is unstyled for now -->
+  <link rel="stylesheet" href="travel_recommendations.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <!-- Logo/site name also acts as a "back to home" link -->
+      <a href="index.html" class="logo">Wanderlist</a>
+
+      <!-- Page navigation. about.html and contact.html don't exist yet -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!--
+        Search bar, wrapped in a <form> (not just loose buttons) so that
+        pressing Enter in the input also triggers a search, same as
+        clicking the Search button.
+        - #search-input: where the user types a destination
+        - #search-btn: type="submit" -> submits the form / triggers search
+        - #clear-btn: type="button" -> does NOT submit the form, just resets it
+      -->
+      <form id="search-form" class="search-bar">
+        <input type="text" id="search-input" placeholder="Search destinations...">
+        <button type="submit" id="search-btn">Search</button>
+        <button type="button" id="clear-btn">Clear</button>
+      </form>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Search results / destination cards get injected here by script.js -->
+    <div id="results"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TravelTime USA. All rights reserved. Thanks for checking us out!</p>
+  </footer>
+
+  <!--
+    Script tag placed at the end of <body> so the HTML above it is
+    already loaded/parsed by the time script.js runs and tries to
+    grab elements like #search-form, #results, etc.
+  -->
+  <script src="travel_recommendations.js"></script>
+</body>
+</html>
