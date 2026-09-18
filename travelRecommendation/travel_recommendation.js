@@ -74,8 +74,9 @@ function renderResults(matches) {
     const card = document.createElement("div");
     card.className = "result-card";
     card.innerHTML = `
-      <h3>${place.name}</h3>
-      <p>${place.description}</p>
+        <img src="${place.imageUrl}" alt="${place.name}">
+        <h3>${place.name}</h3>
+        <p>${place.description}</p>
     `;
     resultsContainer.appendChild(card);
   });
