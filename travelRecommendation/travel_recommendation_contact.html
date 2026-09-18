@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | TravelTime USA Travel Recommendations</title>
+
+  <!-- Same stylesheet as the other pages, so navbar/fonts/colors match -->
+  <link rel="stylesheet" href="travel_recommendation.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="travel_recommendation.html" class="logo">TravelTime USA</a>
+
+      <!-- No "Contact Us" link here on purpose - you're already on this page -->
+      <ul class="nav-links">
+        <li class="nav-home"><a href="travel_recommendation.html">Home</a></li>
+        <li class="nav-about"><a href="travel_recommendation_about.html">About Us</a></li>
+      </ul>
+
+      <form id="search-form" class="search-bar">
+        <input type="text" id="search-input" placeholder="Search destinations...">
+        <button type="submit" id="search-btn">Search</button>
+        <button type="button" id="clear-btn">Clear</button>
+      </form>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Photo banner, same pattern as the About page, holding the "CONTACT US" title -->
+    <section class="page-hero">
+      <div class="blurb-box">
+        <h1>CONTACT US</h1>
+      </div>
+    </section>
+
+    <!-- Intro paragraph, same tan background-box styling as the About page's paragraph -->
+    <section class="about-section">
+      <p>
+        Need help getting started? Any general questions or comments? Send us a note below!
+      </p>
+    </section>
+
+    <!--
+      Contact form: name + email inputs, a message textarea, and a
+      submit button beneath all three. Nothing happens on submit yet -
+      that's a functionality step for later (script.js/backend).
+    -->
+    <form class="contact-form">
+      <input type="text" id="contact-name" name="name" placeholder="Your Name" required>
+      <input type="email" id="contact-email" name="email" placeholder="Your Email" required>
+      <textarea id="contact-message" name="message" placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TravelTime USA. All rights reserved. Thanks for checking us out!</p>
+  </footer>
+
+  <script src="travel_recommendations.js"></script>
+</body>
+</html>
