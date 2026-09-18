@@ -11,6 +11,18 @@
   body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    /*
+    Background photo on body so it covers the ENTIRE page - home and
+    every subpage - not just a boxed-off section. The footer would
+    normally show this photo too (since it has no background of its
+    own), so we give <footer> its own solid background-color below to
+    block the photo there and keep the footer visually separate.
+  */
+  background-image: url('background_photo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* photo stays put in place as the page scrolls */
   }
 
 h1, h2, h3, h4, h5, h6,
@@ -63,15 +75,20 @@ button,
     transition: background-color 0.2s ease; /* smooths the hover color change */
   }
   
-  /* Give each link its own base color... */
-  .nav-links li:nth-child(1) a { background-color: #46f0dc; } /* Home - teal */
-  .nav-links li:nth-child(2) a { background-color: #93d8f4; } /* About Us - blue */
-  .nav-links li:nth-child(3) a { background-color: #f1dca7; } /* Contact Us - yellow */
-  
-  /* ...and its own hover color (slightly darker version of its base color) */
-  .nav-links li:nth-child(1) a:hover { background-color: #21867a; }
-  .nav-links li:nth-child(2) a:hover { background-color: #28b4eb; }
-  .nav-links li:nth-child(3) a:hover { background-color: #d4ab4c; }
+/*
+  Give each link its own base color, targeted by CLASS instead of
+  position (nth-child). This way, if a page drops a link (like the
+  About Us page dropping its own "About Us" button), the remaining
+  links keep their correct colors instead of shifting.
+*/
+.nav-home a { background-color: #46f0dc; }    /* Home - teal */
+.nav-about a { background-color: #93d8f4; }   /* About Us - blue */
+.nav-contact a { background-color: #f1dca7; } /* Contact Us - yellow */
+
+/* ...and its own hover color */
+.nav-home a:hover { background-color: #21867a; }
+.nav-about a:hover { background-color: #28b4eb; }
+.nav-contact a:hover { background-color: #d4ab4c; }
   
   /* Search bar + its two buttons */
   .search-bar {
@@ -105,18 +122,21 @@ button,
    HOME PAGE DESIGN
    ========================================================== */
   .hero {
-    background-image: url('background_photo.jpg');
-    background-size: cover;        /* scales the image to cover the whole section, cropping edges if needed */
-    background-position: center;   /* keeps the image centered while it crops */
-    background-repeat: no-repeat;
-  
     min-height: 80vh;              /* section fills 80% of the visible browser height */
     display: flex;
     align-items: center;           /* vertically centers .hero-content */
     justify-content: center;       /* horizontally centers .hero-content */
     padding: 40px 20px;
   }
-  
+
+  .page-hero {
+    min-height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+
   .hero-content {
     max-width: 600px;
     text-align: center;
@@ -159,4 +179,98 @@ button,
     height: 40px;
     border-radius: 50%;   /* circular frame - delete for square icons */
     cursor: pointer;
+  }
+
+  /* ==========================================================
+   ABOUT US PAGE
+   ========================================================== */
+
+.about-section {
+    max-width: 800px;   /* keeps paragraph text from stretching too wide to comfortably read */
+    margin: 40px auto;  /* auto left/right margin centers this block on the page */
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .about-section h1 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+  
+  .about-section p {
+    background-color: #cd9068;  /* matches .blurb-box / .hero-text on the homepage */
+    color: #ffffff;
+    display: inline-block;      /* keeps the color box snug around the text instead of full page width */
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  /* "OUR TEAM" section: heading on the left, team member row on the right */
+  .team-section {
+    display: flex;
+    align-items: flex-start;   /* aligns the heading to the top of the row instead of centering it */
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+  }
+  
+  .team-heading {
+    flex-shrink: 0;   /* keeps the heading from getting squeezed as the member row grows */
+    width: 160px;
+    font-size: 1.6rem;
+    color: #ffffff;
+    background-color: #cd9068;  /* matches .blurb-box / .hero-text on the homepage */
+
+  }
+  
+  /* Row of 3 team member cards, stretching across the remaining page width */
+  .team-members {
+    display: flex;
+    flex: 1;                    /* fills all the remaining horizontal space next to the heading */
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .team-member {
+    flex: 1;             /* each card takes an equal 1/3 share of the row */
+    text-align: center;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .member-name {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+  }
+  
+  .member-description {
+    margin: 0 0 12px;
+    font-size: 0.95rem;
+    color: #444444;
+  }
+  
+  .member-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #cd9068;   /* matches the navbar's color */
+  }
+
+  /* ==========================================================
+   FOOTER
+   ========================================================== */
+
+footer {
+    /*
+      Solid background so the page's photo (on body) doesn't show through
+      here - this keeps the footer visually separate/"beneath" the photo
+      on every page, matching the navbar's color for consistency.
+    */
+    background-color: #cd9068;
+    padding: 16px 20px;
+    text-align: center;
   }

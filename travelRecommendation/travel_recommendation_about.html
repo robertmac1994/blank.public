@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | TravelTime USA Travel Recommendations</title>
+
+  <!-- Same stylesheet as the homepage, so navbar/fonts/colors match across pages -->
+  <link rel="stylesheet" href="travel_recommendation.css">
+</head>
+<body>
+
+  <!--
+    Navbar copy/pasted from travel_recommendation.html so every page shares
+    the same header. If you change the navbar later (add a page, rename a
+    link, etc.), remember to update it on EVERY page - they aren't
+    automatically linked to each other.
+  -->
+  <header>
+    <nav class="navbar">
+      <a href="travel_recommendation.html" class="logo">TravelTime USA</a>
+
+    <!-- No "About Us" link here on purpose - you're already on this page -->
+        <ul class="nav-links">
+            <li class="nav-home"><a href="travel_recommendation.html">Home</a></li>
+            <li class="nav-contact"><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+      <form id="search-form" class="search-bar">
+        <input type="text" id="search-input" placeholder="Search destinations...">
+        <button type="submit" id="search-btn">Search</button>
+        <button type="button" id="clear-btn">Clear</button>
+      </form>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+        <div class="blurb-box">
+          <h1>ABOUT US</h1>
+        </div>
+      </section>
+  
+  <!-- Intro paragraph, styled with its own tan background box (matches .hero-text on the homepage) -->
+  <section class="about-section">
+    <p>
+    Here at TravelTime USA, we prioritize your happiness above all else. Our small but mighty team of specialists are here and ready to assist you to have the time of your life on your next trip.    
+    </p>
+    </section>
+
+    <!--
+      "OUR TEAM" section: heading sits on the left, and the 3 team
+      member cards sit in a row to its right, stretching across the
+      rest of the page width.
+    -->
+    <section class="team-section">
+      <h2 class="team-heading">OUR TEAM</h2>
+
+      <div class="team-members">
+        <div class="team-member">
+          <h3 class="member-name">Robert MacDonald</h3>
+          <p class="member-description">North America, Central America, Western Europe</p>
+          <p class="member-title">Founder / CEO, Western Hemisphere Specialist</p>
+        </div>
+
+        <div class="team-member">
+          <h3 class="member-name">Caitlin Gilbert</h3>
+          <p class="member-description">Eastern Europe, Asia, Oceania</p>
+          <p class="member-title">Eastern Hemisphere Specialist</p>
+        </div>
+
+        <div class="team-member">
+          <h3 class="member-name">Joe Sakic</h3>
+          <p class="member-description">South America, Africa, Antarctica</p>
+          <p class="member-title">Southern Hemisphere Specialist</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TravelTime USA. All rights reserved. Thanks for checking us out!</p>
+  </footer>
+
+  <script src="travel_recommendation.js"></script>
+</body>
+</html>
