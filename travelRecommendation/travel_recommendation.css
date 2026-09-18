@@ -1,0 +1,102 @@
+/* ==========================================================
+   GLOBAL RESET / BASICS
+   ========================================================== */
+
+   * {
+    /* So padding/border are included in an element's width instead of
+       adding to it - makes layout math way more predictable. */
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  }
+
+h1, h2, h3, h4, h5, h6,
+button,
+.logo,
+.nav-links a {
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+  
+  /* ==========================================================
+     NAVBAR
+     ========================================================== */
+  
+  .navbar {
+    display: flex;              /* lays children out horizontally, side by side */
+    align-items: center;        /* vertically centers logo, links, search bar */
+    justify-content: space-between; /* pushes logo left, links/search right */
+    flex-wrap: wrap;            /* lets items drop to a new line on small screens instead of overflowing */
+  
+    background-color: #cd9068;  /* dark navy - the navbar's overall background */
+    padding: 15px 30px;
+  }
+  
+  /* Site logo/name, top-left */
+  .logo {
+    color: #000000;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;      /* removes the default underline on links */
+    cursor: pointer;             /* mouse becomes a hand/"clicker" over it */
+  }
+  
+  /* Home / About Us / Contact Us list */
+  .nav-links {
+    list-style: none;   /* removes the bullet points from the <ul> */
+    display: flex;      /* lays the <li> items out horizontally */
+    gap: 45px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Each nav link styled to look like its own little button */
+  .nav-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;     /* hand cursor on hover */
+    transition: background-color 0.2s ease; /* smooths the hover color change */
+  }
+  
+  /* Give each link its own base color... */
+  .nav-links li:nth-child(1) a { background-color: #46f0dc; } /* Home - teal */
+  .nav-links li:nth-child(2) a { background-color: #93d8f4; } /* About Us - orange */
+  .nav-links li:nth-child(3) a { background-color: #f1dca7; } /* Contact Us - yellow */
+  
+  /* ...and its own hover color (slightly darker version of its base color) */
+  .nav-links li:nth-child(1) a:hover { background-color: #21867a; }
+  .nav-links li:nth-child(2) a:hover { background-color: #28b4eb; }
+  .nav-links li:nth-child(3) a:hover { background-color: #d4ab4c; }
+  
+  /* Search bar + its two buttons */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .search-bar button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;    /* buttons don't always get a hand cursor by default, so we set it explicitly */
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+  }
+  
+  #search-btn { background-color: #3dccbc; }      /* matches "Home" teal */
+  #search-btn:hover { background-color: #21867a; }
+  
+  #clear-btn { background-color: #e63946; }        /* red, so it visually reads as "reset/danger" */
+  #clear-btn:hover { background-color: #c92c38; }
